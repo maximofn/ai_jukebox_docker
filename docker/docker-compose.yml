@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  ai_jukebox:
+    image: registry.hf.space/enzostvs-ai-jukebox:latest
+    platform: linux/amd64
+    env_file:
+      ../.env
+    environment:
+      - HF_TOKEN
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
